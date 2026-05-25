@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DLCs</title>
     <script>
+        function change_title(){
+            var game_name = "{{ game_name }}";
+            document.title = "DLCs do " + game_name;
+        }
         function load_dlcs_ordered_by_price(){
             var game_id = "{{ game_id }}";
             var url = "https://exa618individualprojectpart2-production.up.railway.app/get_game_dlcs_ordered_by_price/" + game_id;
@@ -33,7 +37,7 @@
                         `
                     });
 
-                    document.getElementById("dlcList").innerHTML = html;
+                    document.getElementById("dlc-list").innerHTML = html;
                 }
             }
             ajax.send();
@@ -67,7 +71,7 @@
                         `
                     });
 
-                    document.getElementById("dlcList").innerHTML = html;
+                    document.getElementById("dlc-list").innerHTML = html;
                 }
             }
             ajax.send();
@@ -91,10 +95,10 @@
         }
     </script>
 </head>
-<body onload="load_dlcs_ordered_by_price()">
+<body onload="change_title(); load_dlcs_ordered_by_price();">
     <div class="search-container">
         <input type="text" id="searchBar" onkeyup="search_dlc(this.value)" placeholder="Pesquise por DLC">
     </div>
-    <div id="dlcList"></div>
+    <div id="dlc-list"></div>
 </body>
 </html>
