@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +29,7 @@
 
                         html += `
                         <div class="games">
-                            <a href="/get_dlcs/${game_id}">
+                            <a class="game_cover" href="/get_dlcs/${game_id}">
                                 <img src="${game_cover}" alt="">
                             </a>
                             <a href="" class="game_name">${game_name}</a>
@@ -59,9 +62,9 @@
         }
     </script>
 </head>
-<body class="main_body" onload="load_games()">
+<body onload="load_games()">
     <div class="header">
-        <a href="/">
+        <a id="header_text" href="/">
             <p id="page_name">Explorador de DLCs</p>
         </a>
         <div class="search-container">
