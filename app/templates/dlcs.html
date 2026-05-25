@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLCs</title>
+    <script>
+        function load_dlcs_ordered_by_price(){
+            var game_id = "{{ game_id }}";
+            var url = "https://exa618individualprojectpart2-production.up.railway.app/get_game_dlcs_ordered_by_price/" + game_id;
+            var ajax = new XMLHttpRequest();
+
+            ajax.open("GET", url, true);
+
+            ajax.onload = function(){
+                if (ajax.status === 200){
+                    var jsonObj = JSON.parse(ajax.responseText);
+
+                    var html = "";
+
+                    jsonObj.forEach(function(item){
+                        var dlc_cover = item.dlc_cover;
+                        var dlc_id = item.dlc_id;
+                        var dlc_name = item.dlc_name;
+                        var dlc_url = item.dlc_url;
+
+                        html += `
+                        <div class="dlcs">
+                            <img src="${dlc_cover}" alt="">
+                            <a href="" class="dlc_name">${dlc_name}</a>
+                            <a href="${dlc_url}">Acessar Página Steam</a>
+                        </div>
+                        `
+                    });
+
+                    document.getElementById("dlcList").innerHTML = html;
+                }
+            }
+            ajax.send();
+        }
+
+        function search_dlc(text){
+            text = text.toLowerCase();
+
+            var dlcs = document.querySelectorAll(".dlcs");
+
+            dlcs.forEach(function(dlc){
+                var dlc_name = dlc.querySelector(".dlc_name").innerText.toLowerCase();
+
+                if(dlc_name.includes(text)){
+                    dlc.style.display = "block";
+                }
+                else{
+                    dlc.style.display = "none";
+                }
+            });
+        }
+    </script>
+</head>
+<body onload="load_dlcs_ordered_by_price()">
+    <div class="search-container">
+        <input type="text" id="searchBar" onkeyup="search_dlc(this.value)" placeholder="Pesquise por DLC">
+    </div>
+    <div id="dlcList"></div>
+</body>
+</html>
