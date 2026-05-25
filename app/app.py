@@ -9,8 +9,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    resp = make_response(render_template("games.html"))
-    return resp
+    return render_template("games.html")
+
+@app.route("/get_dlcs/<game_id>")
+def game_dlcs_page(game_id):
+    return render_template("dlcs.html", game_id=game_id)
 
 if __name__ == "__main__":
     app.run(host=os.getenv("HOST"), port=os.getenv("PORT"), debug=True)
