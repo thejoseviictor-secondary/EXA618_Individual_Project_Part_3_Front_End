@@ -35,7 +35,7 @@
                         `
                     });
 
-                    document.getElementById("gameList").innerHTML = html;
+                    document.getElementById("game_list").innerHTML = html;
                 }
             }
             ajax.send();
@@ -65,10 +65,10 @@
             <p id="page_name">Explorador de DLCs</p>
         </a>
         <div class="search-container">
-            <input type="text" id="searchBar" onkeyup="search_game(this.value)" placeholder="Pesquise por jogo">
+            <input type="text" id="search_bar" onkeyup="search_game(this.value)" placeholder="Pesquise por jogo">
         </div>
     </div>
     
-    <div class="gameList"></div>
+    <div id="game_list"></div>
 </body>
 </html>
