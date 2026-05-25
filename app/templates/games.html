@@ -25,7 +25,9 @@
 
                         html += `
                         <div class="games">
-                            <a href=""><img src="${game_cover}" alt=""></a>
+                            <a href="/get_dlcs/${game_id}">
+                                <img src="${game_cover}" alt="">
+                            </a>
                             <a href="" class="game_name">${game_name}</a>
                             <a href="${game_url}">Acessar Página Steam</a>
                         </div>
@@ -58,7 +60,7 @@
 </head>
 <body onload="load_games()">
     <div class="search-container">
-        <input type="text" id="searchBar" onkeyup="search_game(this.value)" placeholder="Pesquise seu jogo">
+        <input type="text" id="searchBar" onkeyup="search_game(this.value)" placeholder="Pesquise por jogo">
     </div>
     <div id="gameList"></div>
 </body>
