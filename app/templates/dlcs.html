@@ -96,9 +96,17 @@
     </script>
 </head>
 <body onload="change_title(); load_dlcs_ordered_by_price();">
-    <div class="search-container">
-        <input type="text" id="searchBar" onkeyup="search_dlc(this.value)" placeholder="Pesquise por DLC">
+    <div class="header">
+        <a id="header_text" href="/">
+            <p id="page_name">Explorador de DLCs</p>
+        </a>
+        <div class="search-container">
+            <input type="text" id="searchBar" onkeyup="search_dlc(this.value)" placeholder="Pesquise por DLC">
+        </div>
     </div>
+
     <div id="dlc-list"></div>
+
+    <div class="footer">© José Victor, 2026</div>
 </body>
 </html>
