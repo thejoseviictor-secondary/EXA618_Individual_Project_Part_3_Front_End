@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="stylesheet" href="styles.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
@@ -34,7 +35,7 @@
                         `
                     });
 
-                    document.getElementById("gameList").innerHTML = html;
+                    document.getElementsByClassName("game-list").innerHTML = html;
                 }
             }
             ajax.send();
@@ -59,9 +60,15 @@
     </script>
 </head>
 <body onload="load_games()">
-    <div class="search-container">
-        <input type="text" id="searchBar" onkeyup="search_game(this.value)" placeholder="Pesquise por jogo">
+    <div class="header">
+        <a href="/">
+            <p id="page_name">Explorador de DLCs</p>
+        </a>
+        <div class="search-container">
+            <input type="text" id="searchBar" onkeyup="search_game(this.value)" placeholder="Pesquise por jogo">
+        </div>
     </div>
-    <div id="gameList"></div>
+    
+    <div class="game-list"></div>
 </body>
 </html>
