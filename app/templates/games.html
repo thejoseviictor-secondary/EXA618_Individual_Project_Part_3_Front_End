@@ -33,7 +33,7 @@
                                 <img src="${game_cover}" alt="">
                             </a>
                             <a href="/get_dlcs/${game_id}" class="game_name">${game_name}</a>
-                            <a href="${game_url}" target="_blank">Acessar Página Steam</a>
+                            <a href="${game_url}" target="_blank">Ver na Steam</a>
                         </div>
                         `
                     });
@@ -53,7 +53,7 @@
                 var game_name = game.querySelector(".game_name").innerText.toLowerCase();
 
                 if(game_name.includes(text)){
-                    game.style.display = "block";
+                    game.style.display = "initial";
                 }
                 else{
                     game.style.display = "none";
