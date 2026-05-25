@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <script>
+        function load_games(){
+            var url = "https://exa618individualprojectpart2-production.up.railway.app/get_games";
+            var ajax = new XMLHttpRequest();
+
+            ajax.open("GET", url, true);
+
+            var html;
+            
+            ajax.onload = function(){
+                if (ajax.status === 200){
+                var jsonObj = JSON.parse(ajax.responseText);
+
+                jsonObj.forEach(function(item){
+                    var game_cover = item[0];
+                    var game_id = item[1];
+                    var game_name = item[2];
+                    var game_url = item[3];
+
+                    html += `
+                    <div>
+                        <img src="${game_cover}" alt="">
+                        <a href="">${game_name}</a>
+                        <a href="${game_url}">Steam</a>
+                    </div>
+                    `
+                });
+
+                document.getElementById("gameList").innerHTML = html;
+                }
+            }
+            ajax.send();
+        }
+    </script>
+</head>
+<body onload="load_games()">
+    <div id="gameList"></div>
+</body>
+</html>
