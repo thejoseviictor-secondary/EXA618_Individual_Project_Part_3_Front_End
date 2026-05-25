@@ -24,10 +24,10 @@
                         var game_url = item.game_url;
 
                         html += `
-                        <div>
-                            <img src="${game_cover}" alt="">
+                        <div class="games">
+                            <a href=""><img src="${game_cover}" alt=""></a>
                             <a href="">${game_name}</a>
-                            <a href="${game_url}">Steam</a>
+                            <a href="${game_url}">Acessar Página Steam</a>
                         </div>
                         `
                     });
@@ -37,9 +37,29 @@
             }
             ajax.send();
         }
+
+        function search_game(text){
+            text = text.toLowerCase();
+
+            var games = document.querySelectorAll(".games");
+
+            games.forEach(function(game){
+                var game_name = game.querySelector(".game_name").innerText.toLowerCase();
+
+                if(game_name.includes(text)){
+                    game.style.display = "block";
+                }
+                else{
+                    game.style.display = "none";
+                }
+            });
+        }
     </script>
 </head>
 <body onload="load_games()">
+    <div class="search-container">
+        <input type="text" id="searchBar" onkeyup="search_game(this.value)" placeholder="Pesquise seu jogo">
+    </div>
     <div id="gameList"></div>
 </body>
 </html>
