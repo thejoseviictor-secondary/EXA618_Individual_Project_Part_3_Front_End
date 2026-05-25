@@ -37,41 +37,7 @@
                         `
                     });
 
-                    document.getElementById("dlc-list").innerHTML = html;
-                }
-            }
-            ajax.send();
-        }
-
-        function load_dlcs_ordered_by_release_date(){
-            var game_id = "{{ game_id }}";
-            var url = "https://exa618individualprojectpart2-production.up.railway.app/get_game_dlcs_ordered_by_release_date/" + game_id;
-            var ajax = new XMLHttpRequest();
-
-            ajax.open("GET", url, true);
-
-            ajax.onload = function(){
-                if (ajax.status === 200){
-                    var jsonObj = JSON.parse(ajax.responseText);
-
-                    var html = "";
-
-                    jsonObj.forEach(function(item){
-                        var dlc_cover = item.dlc_cover;
-                        var dlc_id = item.dlc_id;
-                        var dlc_name = item.dlc_name;
-                        var dlc_url = item.dlc_url;
-
-                        html += `
-                        <div class="dlcs">
-                            <img src="${dlc_cover}" alt="">
-                            <a href="" class="dlc_name">${dlc_name}</a>
-                            <a href="${dlc_url}">Acessar Página Steam</a>
-                        </div>
-                        `
-                    });
-
-                    document.getElementById("dlc-list").innerHTML = html;
+                    document.getElementById("item_list").innerHTML = html;
                 }
             }
             ajax.send();
@@ -105,7 +71,7 @@
         </div>
     </div>
 
-    <div id="dlc-list"></div>
+    <div id="item_list"></div>
 
     <div class="footer">© José Victor, 2026</div>
 </body>
