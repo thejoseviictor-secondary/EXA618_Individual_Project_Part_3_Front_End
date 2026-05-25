@@ -11,9 +11,9 @@ app = Flask(__name__)
 def home():
     return render_template("games.html")
 
-@app.route("/get_dlcs/<int:game_id>/<string:game_name>")
-def game_dlcs_page(game_id, game_name):
-    return render_template("dlcs.html", game_id=game_id, game_name=game_name)
+@app.route("/get_dlcs/<game_id>")
+def game_dlcs_page(game_id):
+    return render_template("dlcs.html", game_id=game_id, game_name="Teste")
 
 if __name__ == "__main__":
     app.run(host=os.getenv("HOST"), port=os.getenv("PORT"), debug=True)
