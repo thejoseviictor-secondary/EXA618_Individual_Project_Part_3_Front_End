@@ -7,12 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DLCs</title>
+    <title>Comparador e Explorador de DLCs</title>
     <script>
-        function change_title(){
-            var game_name = "{{ game_name }}";
-            document.title = "DLCs do " + game_name;
-        }
         function load_dlcs_ordered_by_price(){
             var game_id = "{{ game_id }}";
             var url = "https://exa618individualprojectpart2-production.up.railway.app/get_game_dlcs_ordered_by_price/" + game_id;
@@ -99,7 +95,7 @@
         }
     </script>
 </head>
-<body onload="change_title(); load_dlcs_ordered_by_price();">
+<body onload="load_dlcs_ordered_by_price()">
     <div class="header">
         <a id="header_text" href="/">
             <p id="page_name">Explorador de DLCs</p>
