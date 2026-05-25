@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explorador de DLCs - Página Inicial</title>
+    <title>Comparador e Explorador de DLCs</title>
     <script>
         function load_games(){
             var url = "https://exa618individualprojectpart2-production.up.railway.app/get_games";
@@ -32,7 +32,7 @@
                             <a class="game_cover" href="/get_dlcs/${game_id}">
                                 <img src="${game_cover}" alt="">
                             </a>
-                            <a href="/get_dlcs/${game_id}/${encodeURIComponent(game_name)}" class="game_name">${game_name}</a>
+                            <a href="/get_dlcs/${game_id}" class="game_name">${game_name}</a>
                             <a href="${game_url}" target="_blank">Ver na Steam</a>
                         </div>
                         `
