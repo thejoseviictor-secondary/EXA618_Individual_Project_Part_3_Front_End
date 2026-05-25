@@ -27,6 +27,8 @@ body{
     position: relative;
     font-family: "Bebas Neue", sans-serif;
     font-style: normal;
+    font-size: medium;
+    text-decoration: none;
     float: left;
     left: 5%;
 }
