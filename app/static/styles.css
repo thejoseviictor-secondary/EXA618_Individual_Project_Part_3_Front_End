@@ -20,6 +20,14 @@ body{
     z-index: 1000;
 }
 
+.header_controls{
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
 #header_text{
     text-decoration: none;
 }
@@ -135,27 +143,12 @@ body{
     background-color: #2a475e;
 }
 
-.top_controls{
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 20px 60px 0 60px;
-}
-
 .ordering_selector_container{
     display: flex;
 
     align-items: center;
 
     gap: 14px;
-
-    padding: 0 60px;
-
-    margin-top: 35px;
-
-    margin-left: auto;
 }
 
 .ordering_selector_container p{
