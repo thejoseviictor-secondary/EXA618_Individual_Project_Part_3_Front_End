@@ -108,7 +108,7 @@ body{
     color: #bb86fc;
 }
 
-.items a:last-child{
+#steam_link{
     display: inline-block;
 
     margin: 0 16px 16px 16px;
