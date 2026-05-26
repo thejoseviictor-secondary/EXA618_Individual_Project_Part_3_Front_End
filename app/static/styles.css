@@ -140,17 +140,13 @@ body{
 
     align-items: center;
 
-    justify-content: flex-end;
-
     gap: 14px;
-
-    width: 100%;
 
     padding: 0 60px;
 
-    box-sizing: border-box;
-
     margin-top: 35px;
+
+    margin-left: auto;
 }
 
 .ordering_selector_container p{
