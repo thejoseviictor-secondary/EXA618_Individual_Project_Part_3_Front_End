@@ -22,7 +22,7 @@
         function load_dlcs(ordering){
             var game_id = "{{ game_id }}";
 
-            if(ordering = "price"){
+            if(ordering == "price"){
                 var url = "https://exa618individualprojectpart2-production.up.railway.app/get_game_dlcs_ordered_by_price/" + game_id;
             }
             else{
