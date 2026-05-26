@@ -9,9 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparador e Explorador de DLCs</title>
     <script>
-        function load_dlcs_ordered_by_price(){
+        function handle_dlc_ordering(dropdown){
+            const selected_value = dropdown.value;
+            if(selected_value == "ordered_by_price"){
+                load_dlcs("price")
+            }
+            else{
+                load_dlcs("release_date")
+            }
+        }
+        
+        function load_dlcs(ordering){
             var game_id = "{{ game_id }}";
-            var url = "https://exa618individualprojectpart2-production.up.railway.app/get_game_dlcs_ordered_by_price/" + game_id;
+
+            if(ordering = "price"){
+                var url = "https://exa618individualprojectpart2-production.up.railway.app/get_game_dlcs_ordered_by_price/" + game_id;
+            }
+            else{
+                var url = "https://exa618individualprojectpart2-production.up.railway.app/get_game_dlcs_ordered_by_release_date/" + game_id;
+            }
+            
             var ajax = new XMLHttpRequest();
 
             ajax.open("GET", url, true);
@@ -87,14 +104,22 @@
         }
     </script>
 </head>
-<body onload="load_dlcs_ordered_by_price()">
+<body onload="load_dlcs('price')">
     <div class="header">
         <a id="header_text" href="/">
             <p id="page_name">Explorador de DLCs</p>
         </a>
-        <div class="search-container">
+        <div class="search_container">
             <input type="text" id="search_bar" onkeyup="search_item(this.value)" placeholder="Pesquise por DLC">
         </div>
+    </div>
+    
+    <div class="ordering_selector_container">
+        <p>Ordenar por:</p>
+        <select id="dlc_ordering_selector" onchange="handle_dlc_ordering(this)">
+            <option value="ordered_by_price">Preço</option>
+            <option value="ordered_by_release_date">Data de Lançamento</option>
+        </select>
     </div>
 
     <div id="item_list"></div>
