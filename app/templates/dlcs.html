@@ -26,6 +26,7 @@
                         var dlc_access_date = item.dlc_access_date;
                         var date = new Date(dlc_access_date);
                         dlc_access_date = date.toLocaleDateString("pt-BR", {
+                            timeZone: "UTC",
                             day: "numeric",
                             month: "long",
                             year: "numeric"
@@ -34,6 +35,7 @@
                         var dlc_release_date = item.dlc_release_date;
                         date = new Date(dlc_release_date);
                         dlc_release_date = date.toLocaleDateString("pt-BR", {
+                            timeZone: "UTC",
                             day: "numeric",
                             month: "long",
                             year: "numeric"
