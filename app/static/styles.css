@@ -105,7 +105,8 @@ body{
 }
 
 .item_description{
-    padding: 16px 16px 8px 16px;
+    margin: 0px 0px 0px 0px;
+    padding: 16px 16px 16px 16px;
 }
 
 .item_name:hover{
