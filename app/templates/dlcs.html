@@ -24,6 +24,13 @@
 
                     jsonObj.forEach(function(item){
                         var dlc_access_date = item.dlc_access_date;
+                        var date = new Date(dlc_access_date);
+                        dlc_access_date = date.toLocaleDateString("pt-BR", {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric"
+                        })
+
                         var dlc_actual_price = item.dlc_actual_price;
                         var dlc_cover = item.dlc_cover;
                         var dlc_name = item.dlc_name;
