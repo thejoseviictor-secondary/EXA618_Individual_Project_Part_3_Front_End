@@ -135,6 +135,54 @@ body{
     background-color: #2a475e;
 }
 
+.ordering_selector_container{
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 0 60px;
+
+    margin-top: 10px;
+}
+
+.ordering_selector_container p{
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #d0d0d0;
+}
+
+#dlc_ordering_selector{
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #343434;
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#dlc_ordering_selector:hover{
+    background-color: #404040;
+}
+
+#dlc_ordering_selector:focus{
+    box-shadow: 0 0 0 2px #9d4edd;
+}
+
 .footer{
     display: flex;
 
