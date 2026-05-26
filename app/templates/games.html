@@ -28,11 +28,11 @@
                         var game_url = item.game_url;
 
                         html += `
-                        <div class="games">
-                            <a class="game_cover" href="/get_dlcs/${game_id}">
+                        <div class="items">
+                            <a class="item_cover" href="/get_dlcs/${game_id}">
                                 <img src="${game_cover}" alt="">
                             </a>
-                            <a href="/get_dlcs/${game_id}" class="game_name">${game_name}</a>
+                            <a href="/get_dlcs/${game_id}" class="item_name">${game_name}</a>
                             <a href="${game_url}" target="_blank">Ver na Steam</a>
                         </div>
                         `
@@ -44,19 +44,19 @@
             ajax.send();
         }
 
-        function search_game(text){
+        function search_item(text){
             text = text.toLowerCase();
 
-            var games = document.querySelectorAll(".games");
+            var items = document.querySelectorAll(".items");
 
-            games.forEach(function(game){
-                var game_name = game.querySelector(".game_name").innerText.toLowerCase();
+            items.forEach(function(item){
+                var item_name = item.querySelector(".item_name").innerText.toLowerCase();
 
-                if(game_name.includes(text)){
-                    game.style.display = "initial";
+                if(item_name.includes(text)){
+                    item.style.display = "initial";
                 }
                 else{
-                    game.style.display = "none";
+                    item.style.display = "none";
                 }
             });
         }
@@ -68,7 +68,7 @@
             <p id="page_name">Explorador de DLCs</p>
         </a>
         <div class="search-container">
-            <input type="text" id="search_bar" onkeyup="search_game(this.value)" placeholder="Pesquise por jogo">
+            <input type="text" id="search_bar" onkeyup="search_item(this.value)" placeholder="Pesquise por jogo">
         </div>
     </div>
     
