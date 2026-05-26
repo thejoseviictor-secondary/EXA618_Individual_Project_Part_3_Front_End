@@ -31,10 +31,17 @@
                             year: "numeric"
                         })
 
+                        var dlc_release_date = item.dlc_release_date;
+                        date = new Date(dlc_release_date);
+                        dlc_release_date = date.toLocaleDateString("pt-BR", {
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric"
+                        })
+
                         var dlc_actual_price = item.dlc_actual_price;
                         var dlc_cover = item.dlc_cover;
                         var dlc_name = item.dlc_name;
-                        var dlc_release_date = item.dlc_release_date;
                         var dlc_url = item.dlc_url;
 
                         html += `
