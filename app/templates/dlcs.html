@@ -104,17 +104,19 @@
         <a id="header_text" href="/">
             <p id="page_name">Explorador de DLCs</p>
         </a>
-        <div class="search_container">
-            <input type="text" id="search_bar" onkeyup="search_item(this.value)" placeholder="Pesquise por DLC">
+        <div class="top_controls">
+            <div class="search_container">
+                <input type="text" id="search_bar" onkeyup="search_item(this.value)" placeholder="Pesquise por DLC">
+            </div>
+
+            <div class="ordering_selector_container">
+                <label for="dlc_ordering_selector">Ordenar por:</label>
+                <select id="dlc_ordering_selector" onchange="handle_dlc_ordering(this)">
+                    <option value="price">Preço</option>
+                    <option value="release_date">Data de Lançamento</option>
+                </select>
+            </div>
         </div>
-    </div>
-    
-    <div class="ordering_selector_container">
-        <label for="dlc_ordering_selector">Ordenar por:</label>
-        <select id="dlc_ordering_selector" onchange="handle_dlc_ordering(this)">
-            <option value="price">Preço</option>
-            <option value="release_date">Data de Lançamento</option>
-        </select>
     </div>
 
     <div id="item_list"></div>
