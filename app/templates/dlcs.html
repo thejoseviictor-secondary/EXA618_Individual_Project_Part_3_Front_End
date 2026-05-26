@@ -29,10 +29,12 @@
                         var dlc_url = item.dlc_url;
 
                         html += `
-                        <div class="dlcs">
-                            <img src="${dlc_cover}" alt="">
-                            <a href="" class="dlc_name">${dlc_name}</a>
-                            <a href="${dlc_url}">Acessar Página Steam</a>
+                        <div class="items">
+                            <a class="item_cover" href="${dlc_url}">
+                                <img src="${dlc_cover}" alt="">
+                            </a>
+                            <a href="${dlc_url}" class="item_name">${dlc_name}</a>
+                            <a href="${dlc_url}" target="_blank">Ver na Steam</a>
                         </div>
                         `
                     });
@@ -43,19 +45,19 @@
             ajax.send();
         }
 
-        function search_dlc(text){
+        function search_item(text){
             text = text.toLowerCase();
 
-            var dlcs = document.querySelectorAll(".dlcs");
+            var items = document.querySelectorAll(".items");
 
-            dlcs.forEach(function(dlc){
-                var dlc_name = dlc.querySelector(".dlc_name").innerText.toLowerCase();
+            items.forEach(function(item){
+                var item_name = item.querySelector(".item_name").innerText.toLowerCase();
 
-                if(dlc_name.includes(text)){
-                    dlc.style.display = "initial";
+                if(item_name.includes(text)){
+                    item.style.display = "initial";
                 }
                 else{
-                    dlc.style.display = "none";
+                    item.style.display = "none";
                 }
             });
         }
@@ -67,7 +69,7 @@
             <p id="page_name">Explorador de DLCs</p>
         </a>
         <div class="search-container">
-            <input type="text" id="searchBar" onkeyup="search_dlc(this.value)" placeholder="Pesquise por DLC">
+            <input type="text" id="search_bar" onkeyup="search_item(this.value)" placeholder="Pesquise por DLC">
         </div>
     </div>
 
