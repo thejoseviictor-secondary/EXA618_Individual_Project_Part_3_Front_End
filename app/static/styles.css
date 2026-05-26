@@ -104,6 +104,10 @@ body{
     font-weight: 600;
 }
 
+.item_description{
+    padding: 16px 16px 8px 16px;
+}
+
 .item_name:hover{
     color: #bb86fc;
 }
